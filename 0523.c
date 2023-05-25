@@ -11,7 +11,7 @@ typedef struct node{
 
 void init(){
 	printf("\n\n");
-	printf(" <이름>\n\n");
+	printf(" < Current NBA players tier>\n\n");
 	printf("1. 이름 등록\n");
 	printf("2. 이름 확인\n");
 	printf("3. 이름 검색\n");
@@ -158,7 +158,7 @@ void save(NODE* head) {
 	NODE* curr = head->next;
 	while (curr != NULL)
 	{
-		fprintf(fp, "%s\n", curr->name);
+		fprintf(fp, "%d %s\n", curr->num, curr->name);
 		curr = curr->next;
 	}
 	printf("저장 완료");
@@ -213,7 +213,7 @@ void main(void)
 		} 
 		else if(input == 7){
 			system("cls");
-			save(head);
+			load(head);
 		} 
 	}
 
